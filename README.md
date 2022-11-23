@@ -40,3 +40,19 @@ purchase(
     points
 }
 ```
+
+* For getting transaction between dates 
+
+```
+ {
+  sales ( dateRangeRequest : {
+    startDateTime:"2022-05-01T00:00:00Z",
+    endDateTime:"2022-11-19T23:24:59Z"
+  }) {
+    dateTime
+    sales
+    points
+  }
+}
+
+```
