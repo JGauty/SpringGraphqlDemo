@@ -1,0 +1,8 @@
+mutation purchase($purchaseRequest: PurchaseRequest ) {
+            purchase(purchaseRequest : $purchaseRequest)
+    {
+        final_price
+        points
+    }
+}
+

@@ -1,0 +1,2 @@
+create table PAYMENT_INSTRUMENT (INSTRUMENT_ID serial primary key, PAYMENT_TYPE varchar(255) not null, UPPER_LIMIT number, LOWER_LIMIT number, POINTS_MULTIPLIER number);
+create table PAYMENT_TRANSACTION (id serial primary key, INSTRUMENT_ID serial, foreign key (INSTRUMENT_ID) references PAYMENT_INSTRUMENT(INSTRUMENT_ID), TRANSACTION_TIMESTAMP TIMESTAMP, SALE number, points number );

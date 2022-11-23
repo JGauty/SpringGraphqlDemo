@@ -1,0 +1,41 @@
+input PurchaseRequest {
+    price : String!
+    price_modifier : Float!
+    payment_method : String!
+    dateTime : DateTime!
+}
+
+input DateRangeRequest {
+    startDateTime : DateTime!
+    endDateTime : DateTime!
+}
+
+type PurchaseResponse {
+    final_price : String
+    points : Int
+}
+type TotalSalesResponse {
+    dateTime : DateTime
+    sales : String
+    points : Int
+}
+
+type Query {
+    sales (dateRangeRequest : DateRangeRequest ) : [TotalSalesResponse]
+}
+
+type Mutation {
+    purchase (purchaseRequest : PurchaseRequest): PurchaseResponse
+}
+
+enum PaymentType {
+    CASH,
+    CASH_ON_DELIVERY,
+    VISA,
+    MASTERCARD,
+    AMEX,
+    JCB
+}
+
+
+scalar DateTime

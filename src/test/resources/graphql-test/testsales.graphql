@@ -1,0 +1,7 @@
+query sales($dateRangeRequest: DateRangeRequest){
+    sales(dateRangeRequest: $dateRangeRequest) {
+        dateTime
+        sales
+        points
+    }
+}
